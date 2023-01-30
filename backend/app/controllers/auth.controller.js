@@ -4,6 +4,7 @@ const StudentModel=require("../models/student.model")
 require('dotenv').config()
 
 exports.Register=(req,res)=>{
+    
     const user=StudentModel({
         name:req.body.name,
         email:req.body.email,
@@ -17,6 +18,7 @@ exports.Register=(req,res)=>{
         return res.status(500).send({message:"failed"})
     })
 }
+
 exports.Login=(req,res)=>{
     // console.log(process.env.SECRET_KEY)
     const{email,password}=req.body;

@@ -1,5 +1,6 @@
 const JobPostModel=require("../models/index").job;
 const CompanyModel=require("../models/index").company;
+const StudentModel=require("../models/index").student;
 
 exports.getpost=(req,res)=>{
     JobPostModel.find({})
@@ -55,6 +56,25 @@ exports.createpost= async (req,res)=>{
     })
     const data=await jobpostt.save();
     UserById.jobpost.push(jobpostt);
+    await UserById.save();
+    return res.send(UserById);
+}
+exports.createpost1= async (req,res)=>{
+    const userId=req.body.candidate;
+    const UserById= await StudentModel.findById(userId);
+    console.log(UserById);
+    if(!UserById){
+        res.status(404).send({message:"invalid id"})
+    }
+    const jobpostt=new JobPostModel({
+        title:req.body.title,
+        jobDesc:req.body.jobDesc,
+        reqSkill:req.body.reqSkill,
+        salary:req.body.reqSkill,
+        candidate:userId
+    })
+    const data=await jobpostt.save();
+    UserById.appied.push(jobpostt);
     await UserById.save();
     return res.send(UserById);
 }

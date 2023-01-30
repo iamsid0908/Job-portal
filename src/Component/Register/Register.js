@@ -20,6 +20,7 @@ function Register() {
                 'Content-type':'application/json'
             }
         })
+        .then(data=>data.json())
         .then((data)=>{
             console.log(data)
             navigate('/login')

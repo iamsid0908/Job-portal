@@ -15,27 +15,35 @@ function OutlinedCard({jobs}) {
          setjobdesc(jobs.jobDesc)
          setreqSkill(jobs.reqSkill)
          settitle(jobs.title);
+         
+
         
      }
      const user={postId,candidate,jobDesc,reqSkill,title};
+     
 
-     const handelChange=(e)=>{
-      console.log(user);
+    function handelChange(e){
       e.preventDefault();
-      // fetch("http://localhost:8000/api/student/id",{
-      //     method:"PUT",
-      //     body:JSON.stringify(user),
-      //     mode:'cors',
-      //     headers:{
-      //       'Content-type':'application/json'
-      //     }
-      //   })
-        // .then((data)=>{
-        //   console.log(data) 
-        // })
-        // .catch((err)=>{
-        //   console.log(err)
-        // })
+      console.log(user);
+      fetch("http://localhost:8000/api/job/student/:id",{
+          method:"POST",
+          body:JSON.stringify(user),
+          mode:'cors',
+          headers:{
+            'Content-type':'application/json'
+          }
+        })
+        .then((data)=>{
+          console.log(data)
+          console.log("hiiiiii") 
+        })
+        .catch((err)=>{
+          console.log(err)
+        })
+     }
+     const superHandle=(e)=>{
+      handle(e);
+      handelChange(e);
      }
   return (
     
@@ -51,7 +59,7 @@ function OutlinedCard({jobs}) {
         </Card.Text>
         <Card.Text>Expt.{jobs.salary}
         </Card.Text>
-        <Button variant="primary" onClick={handle} onChange={handelChange} id={jobs.id}>Go somewhere</Button>
+        <Button variant="primary" onClick={superHandle}  id={jobs.id} >Go somewhere</Button>
       </Card.Body>
     </Card>
  
