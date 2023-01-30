@@ -1,0 +1,35 @@
+.profile{
+    border: 1px solid red;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.profile-div{
+    border: 1px solid black;
+    height: auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+}
+.profile-div input{
+    height: 30px;
+    width: 400px;
+    padding-left: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 0.01px solid black;
+    margin-bottom: 30px;
+}
+.jobs-div{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    margin:20px 20px;
+    padding:10px;
+    text-align: center;
+    cursor: pointer;
+    
+}

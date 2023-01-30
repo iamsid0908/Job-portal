@@ -1,0 +1,35 @@
+body{
+    margin: 0px;
+    padding: opx;
+}
+.home{
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.container{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 500px;
+}
+.company{
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.student{
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

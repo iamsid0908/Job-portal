@@ -1,0 +1,18 @@
+.navbar{
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    
+}
+.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+}
+.right li{
+    margin: 20px;
+    list-style: none;
+    text-decoration: none;
+}
